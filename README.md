@@ -15,17 +15,17 @@
 
 ## 数据库ER图
 
-![BookManager/README.md at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234341606.png)
+![BookManager/image-20230216234341606.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234341606.png)
 
-![BookManager/README.md at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234401925.png)
+![BookManager/image-20230216234401925.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234401925.png)
 
 ## 项目截图
 
-![image-20230216234515721](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234515721.png)
+![BookManager/image-2023021623451572112.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-2023021623451572112.png)
 
-![image-20230216234532020](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234532020.png)
+![BookManager/image-20230216234532020.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234532020.png)
 
-![image-20230216234546787](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234546787.png)
+![BookManager/image-20230216234546787.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234546787.png)
 
 
 
