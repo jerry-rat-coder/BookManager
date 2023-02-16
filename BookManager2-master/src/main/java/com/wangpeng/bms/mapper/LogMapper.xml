@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.bms.mapper.LogMapper">
+  <resultMap id="BaseResultMap" type="com.wangpeng.bms.model.Log">
+    <id column="log_id" jdbcType="INTEGER" property="logId" />
+    <result column="operator_id" jdbcType="INTEGER" property="operatorId" />
+    <result column="operate_time" jdbcType="TIMESTAMP" property="operateTime" />
+    <result column="operate_content" jdbcType="VARCHAR" property="operateContent" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="operatorName" jdbcType="VARCHAR" property="operatorName" />
+    <result column="isDel" jdbcType="INTEGER" property="isdel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    log_id, operator_id, operate_time, operate_content, note,isDel
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from log_info
+    where log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from log_info
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wangpeng.bms.model.Log">
+    insert into log_info ( operator_id, operate_time,
+      operate_content, note)
+    values ( #{operatorId,jdbcType=INTEGER}, #{operateTime,jdbcType=TIMESTAMP},
+      #{operateContent,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangpeng.bms.model.Log">
+    insert into log_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        operator_id,
+      </if>
+      <if test="operateTime != null">
+        operate_time,
+      </if>
+      <if test="operateContent != null">
+        operate_content,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="operateTime != null">
+        #{operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operateContent != null">
+        #{operateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangpeng.bms.model.Log">
+    update log_info
+    <set>
+      <if test="operatorId != null">
+        operator_id = #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="operateTime != null">
+        operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operateContent != null">
+        operate_content = #{operateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+        <if test="isdel != null">
+          isDel = #{isdel,jdbcType=INTEGER}
+        </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <select id="selectCounts" resultType="int">
+    select count(*) from log_info
+  </select>
+  <select id="selectCount" resultType="int">
+    select count(*)
+    from log_info
+    order by log_id
+    offset #{begin}  rows
+      fetch next #{size} rows only ;
+  </select>
+  <select id="selectBySearch" resultMap="BaseResultMap">
+    select log_id,operate_time,operate_content,note,(select username from users where  operator_id = userId ) as operatorName
+    from log_info
+    where isDel = 0
+    order by log_id
+    offset #{begin}  rows
+      fetch next #{size} rows only ;
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select *
+    from log_info
+    where isDel = 0
+  </select>
+  <update id="updateByPrimaryKey" parameterType="com.wangpeng.bms.model.Log">
+    update log_info
+    set operator_id = #{operatorId,jdbcType=INTEGER},
+      operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      operate_content = #{operateContent,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR}
+
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+
+</mapper>

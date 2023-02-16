@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.bms.mapper.BookTypeMapper">
+  <resultMap id="BaseResultMap" type="com.wangpeng.bms.model.BookType">
+    <id column="bookTypeId" jdbcType="INTEGER" property="booktypeid" />
+    <result column="bookTypeName" jdbcType="VARCHAR" property="booktypename" />
+    <result column="bookTypeDesc" jdbcType="VARCHAR" property="booktypedesc" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bookTypeId, bookTypeName, bookTypeDesc,stock
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from book_type
+    where bookTypeId = #{booktypeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from book_type
+    where bookTypeId = #{booktypeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wangpeng.bms.model.BookType">
+    insert into book_type (bookTypeName, bookTypeDesc , stock
+      )
+    values ( #{booktypename,jdbcType=VARCHAR}, #{booktypedesc,jdbcType=VARCHAR}, #{stock,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangpeng.bms.model.BookType">
+    insert into book_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="booktypename != null">
+        bookTypeName,
+      </if>
+      <if test="booktypedesc != null">
+        bookTypeDesc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="booktypename != null">
+        #{booktypename,jdbcType=VARCHAR},
+      </if>
+      <if test="booktypedesc != null">
+        #{booktypedesc,jdbcType=VARCHAR},
+      </if>
+        <if test="stock != null">
+          #{stock,jdbcType=INTEGER},
+        </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangpeng.bms.model.BookType">
+    update book_type
+    <set>
+      <if test="booktypename != null">
+        bookTypeName = #{booktypename,jdbcType=VARCHAR},
+      </if>
+      <if test="booktypedesc != null">
+        bookTypeDesc = #{booktypedesc,jdbcType=VARCHAR},
+      </if>
+      <if test="stock != null">
+        stock = #{stock,jdbcType=INTEGER},
+      </if>
+    </set>
+    where bookTypeId = #{booktypeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangpeng.bms.model.BookType">
+    update book_type
+    set bookTypeName = #{booktypename,jdbcType=VARCHAR},
+      bookTypeDesc = #{booktypedesc,jdbcType=VARCHAR},
+       stock = #{stock,jdbcType=INTEGER}
+    where bookTypeId = #{booktypeid,jdbcType=INTEGER}
+  </update>
+  <select id="selectAllByLimit" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from book_type
+    order by bookTypeId
+    offset #{begin}  rows
+    fetch next #{size} rows only ;
+  </select>
+  <select id="selectCount" resultType="int">
+    select count(*) from book_type
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from book_type
+  </select>
+  <select id="selectCountBySearch" resultType="int">
+    select count(*) from book_type
+    <where>
+      <if test="booktypename != null and booktypename != '' ">
+        and bookTypeName like concat('%',#{booktypename},'%')
+      </if>
+    </where>
+  </select>
+  <select id="selectBySearch" resultMap="BaseResultMap">
+    select bookTypeId, bookTypeName, bookTypeDesc,stock
+    from book_type
+    <where>
+      <if test="booktypename != null and booktypename != '' ">
+        and bookTypeName like concat('%',#{booktypename},'%')
+      </if>
+    </where>
+    order by bookTypeId
+    offset #{begin}  rows
+    fetch next #{size} rows only ;
+  </select>
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.bms.mapper.UserGarbMapper">
+  <resultMap id="BaseResultMap" type="com.wangpeng.bms.model.UserGarb">
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="userPassword" jdbcType="VARCHAR" property="userpassword" />
+    <result column="isAdmin" jdbcType="TINYINT" property="isadmin" />
+    <result column="logId" jdbcType="INTEGER" property="logid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, userName, userPassword, isAdmin, logId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_garb
+    where userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_garb
+    where userId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wangpeng.bms.model.UserGarb">
+    insert into user_garb (userId, userName, userPassword, 
+      isAdmin, logId)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpassword,jdbcType=VARCHAR}, 
+      #{isadmin,jdbcType=TINYINT}, #{logid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangpeng.bms.model.UserGarb">
+    insert into user_garb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="username != null">
+        userName,
+      </if>
+      <if test="userpassword != null">
+        userPassword,
+      </if>
+      <if test="isadmin != null">
+        isAdmin,
+      </if>
+      <if test="logid != null">
+        logId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpassword != null">
+        #{userpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="isadmin != null">
+        #{isadmin,jdbcType=TINYINT},
+      </if>
+      <if test="logid != null">
+        #{logid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangpeng.bms.model.UserGarb">
+    update user_garb
+    <set>
+      <if test="username != null">
+        userName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpassword != null">
+        userPassword = #{userpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="isadmin != null">
+        isAdmin = #{isadmin,jdbcType=TINYINT},
+      </if>
+      <if test="logid != null">
+        logId = #{logid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangpeng.bms.model.UserGarb">
+    update user_garb
+    set userName = #{username,jdbcType=VARCHAR},
+      userPassword = #{userpassword,jdbcType=VARCHAR},
+      isAdmin = #{isadmin,jdbcType=TINYINT},
+      logId = #{logid,jdbcType=INTEGER}
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>
