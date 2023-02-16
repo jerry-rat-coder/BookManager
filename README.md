@@ -15,9 +15,9 @@
 
 ## 数据库ER图
 
-[BookManager/image-20230216234341606.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234341606.png)
+![BookManager/README.md at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234341606.png)
 
-![image-20230216234401925](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234401925.png)
+![BookManager/README.md at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234401925.png)
 
 ## 项目截图
 
