@@ -11,11 +11,11 @@
 
 ## 功能模块
 
-![image-20230216234304169](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234304169.png)
+![BookManager/image-20230216234304169.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234304169.png)
 
 ## 数据库ER图
 
-![image-20230216234341606](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234341606.png)
+[BookManager/image-20230216234341606.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234341606.png)
 
 ![image-20230216234401925](C:\Users\30499\AppData\Roaming\Typora\typora-user-images\image-20230216234401925.png)
 
