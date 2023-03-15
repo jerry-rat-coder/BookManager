@@ -27,7 +27,6 @@
 
 ![BookManager/image-2023021623451572112.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-2023021623451572112.png)
 
-![BookManager/image-20230216234532020.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234532020.png)
 
 ![BookManager/image-20230216234546787.png at master · DOC998/BookManager (github.com)](https://github.com/DOC998/BookManager/blob/master/BookManagerVue/public/img/image-20230216234546787.png)
 
