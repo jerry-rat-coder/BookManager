@@ -7,9 +7,7 @@
          </div> -->
         <b style="font-size: 36px; line-height: 30px; height: 30px;opacity: 0.6;">欢迎使用简易至上图书管理系统</b>
         <p>项目名：简易到不能再简易的图书管理系统</p>
-        <p>开发人员：杨雨松</p>
-        <p>联系方式-Email: yusongyang233@gamail.com</p>
-        <p>联系方式-QQ: 3049988597</p>
+        <p>开发人员：超级平凡切图仔</p>
         <!-- <p>开发周期: 2021/11/8 —— 2021/11/13</p> -->
         <hr/>
         <div id="pies" style="width: 600px; height: 400px; margin: 0 !important;" > </div>
