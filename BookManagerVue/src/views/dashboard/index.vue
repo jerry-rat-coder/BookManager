@@ -15,14 +15,6 @@
           <h1>各季度借阅量</h1>
           <img src="../../../public/趋势.png" alt="趋势图">
         </div>
-        <!-- <b>项目开发环境介绍</b>
-        <p>操作系统: Windows 10</p>
-        <p>开发工具: Intellij IDEA 2021.2.1 VScode</p>
-        <p>Java版本: 1.8.0</p>
-        <p>服务器: Tomcat 8.5</p>
-        <p>数据库: SqlServe</p>
-        <p>前端技术: HTML+CSS+JavaScript+Vue+Axios+ElementUI</p>
-        <p>后端技术: Java+SpringBoot+MyBatis+SqlServe</p> -->
     </div>
   </div>
 </template>
