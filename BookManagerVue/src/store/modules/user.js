@@ -108,7 +108,6 @@ const actions = {
                 console.log(message)
                 const { token, username, avatar, nickname, email, phone } = data
                 commit('SET_TOKEN', data.token)
-                    // commit('SET_ROLES', data.roles)
                 commit('SET_NAME', username)
                 commit('SET_AVATAR', avatar)
                 commit('SET_NICKNAME', nickname)
@@ -140,8 +139,6 @@ const actions = {
                     data['avatar'] = data.avatarurl
                 }
 
-                // data['avatar'] = 'http://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202112251517869.jpg'
-                // data['avatar'] = 'https://cdn.acwing.com/media/user/profile/photo/60364_lg_786b0c4c45.jpg'
 
                 const { userid, roles, username, avatar, email, phone, nickname, countvio } = data
 

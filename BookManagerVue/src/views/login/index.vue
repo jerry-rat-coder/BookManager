@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container bg-slideshow"  v-bind:style="{ 'background-image': 'url(' + currentImage + ')' }">
+  <div class="login-container bg-slideshow"  :style="{ 'background-image': 'url(' + currentImage + ')' }">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <!-- 标题 -->
       <div class="title-container">
@@ -243,6 +243,7 @@ $dark_gray:#889aa4;
 $light_gray:#eee;
 
 .login-container {
+  
   min-height: 100%;
   width: 100%;
   background-color: $bg;
