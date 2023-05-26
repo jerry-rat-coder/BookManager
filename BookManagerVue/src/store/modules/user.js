@@ -95,7 +95,7 @@ const actions = {
             })
         })
     },
-    //user register
+    //admin login
     logins({ commit }, userInfo) {
         const { username, password, isadmin } = userInfo
         return new Promise((resolve, reject) => {

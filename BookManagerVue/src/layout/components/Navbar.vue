@@ -95,7 +95,6 @@ export default {
         this.$message.success('上传成功');
         updateImg(res.data, this.id).then(res => {
           queryU(this.id).then(res => {
-          console.log("我是77是个sb")
           console.log(this.userImg)
           console.log(res)
           this.userImg = res.avatarurl
