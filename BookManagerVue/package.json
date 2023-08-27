@@ -2,7 +2,7 @@
   "name": "book-manager-vue",
   "version": "4.4.0",
   "description": "图书管理系统前端界面",
-  "author": "Pan <panfree23@gmail.com>",
+  "author": "Pan <yusongyang233@gmail.com>",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
