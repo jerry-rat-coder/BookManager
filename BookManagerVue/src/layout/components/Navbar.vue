@@ -15,8 +15,8 @@
         
         <div class="avatar-wrapper">
           <el-upload
-          class="avatar-uploader"
-          style="display:inline-block;"
+                class="avatar-uploader"
+                style="display:inline-block;"
                 action="http://localhost:8092/BookManager/update/updateImg"
                 :show-file-list="false"
                 :on-success="handleAvatarSuccess"
